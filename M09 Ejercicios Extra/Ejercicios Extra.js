@@ -99,17 +99,12 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
-   let arrayEnOrden = [];
-   for (let i = 0; i < arrayOfStrings.length; i++) {
-      for (let j = i+1; j<arrayOfStrings.length; j++) {
-         if(arrayOfStrings[i].length >= arrayOfStrings[j].length) {
-            arrayEnOrden.push(arrayOfStrings[i])
-         }
-      }
-   }
-   return arrayEnOrden;
-
-
+   
+   return arrayOfStrings.sort(function(a, b){
+      if (a.length > b.length) return 1
+      else if (b.length > a.length) return -1
+      else return 0
+   });
 
 }
 
@@ -122,7 +117,7 @@ function buscoInterseccion(array1, array2) {
    // Tu código:
    let intersection = []
    for (let i = 0; i < array1.length; i++) {
-      for (let j = 0; j < array2.length; i++){
+      for (let j = 0 ; j < array2.length; j++){
          if(array1[i] === array2[j]) {
             intersection.push(array1[i]);
          }
